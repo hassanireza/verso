@@ -1,0 +1,19 @@
+.seal-ring {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.seal-ring__count {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--paper-dim);
+}
+
+.seal-ring__count--over {
+  color: #e05a3f;
+  font-weight: 600;
+}
