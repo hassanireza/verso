@@ -15,7 +15,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 RUN python manage.py collectstatic --noinput --settings=verso.settings || true
+RUN chmod +x entrypoint.sh
 
 EXPOSE 8000
 
-CMD ["sh", "-c", "python manage.py migrate --noinput && gunicorn verso.wsgi:application --bind 0.0.0.0:${PORT:-8000} --workers 3"]
+CMD ["./entrypoint.sh"]
